@@ -10,5 +10,6 @@ RSpec.describe 'RGB' do
   example 'hex to int' do
     expect(to_ints('#000000')).to eq [0, 0, 0]
     expect(to_ints('#ffffff')).to eq [255, 255, 255]
+    expect(to_ints('#043c78')).to eq [4, 60, 120]
   end
 end
