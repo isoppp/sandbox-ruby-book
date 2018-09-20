@@ -12,4 +12,4 @@ reference: https://ruby-book.jnito.com/
 ## Simple file watch and execute test (using node.js)
 
 - `yarn global add chokidar-cli`
-- `chokidar '**/*.rb' -c 'bundle exec rspec`
+- `chokidar '**/*.rb' -c "bundle exec rspec"`
