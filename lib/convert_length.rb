@@ -4,6 +4,6 @@ UNITS = {
   in: 39.37
 }
 
-def convert_length(length, unit_from, unit_to)
-  (length / UNITS[unit_from] * UNITS[unit_to]).round(2)
+def convert_length(length, from: :m, to: :m)
+  (length / UNITS[from] * UNITS[to]).round(2)
 end
