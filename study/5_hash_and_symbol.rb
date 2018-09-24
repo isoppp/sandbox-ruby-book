@@ -20,4 +20,3 @@ end
 # p hash_sample # error
 p hash_sample(0)
 p hash_sample(0, exist: false)
-
