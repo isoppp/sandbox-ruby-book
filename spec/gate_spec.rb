@@ -23,4 +23,16 @@ RSpec.describe 'Gate Test /' do
     @umeda.enter(ticket)
     expect(@mikuni.exit(ticket)).to eq false
   end
+
+  example 'umeda to mikuni should be able to exit' do
+    ticket = Ticket.new(190)
+    @umeda.enter(ticket)
+    expect(@mikuni.exit(ticket)).to eq true
+  end
+
+  example 'juso to mikuni should be able to exit' do
+    ticket = Ticket.new(150)
+    @juso.enter(ticket)
+    expect(@mikuni.exit(ticket)).to eq true
+  end
 end
