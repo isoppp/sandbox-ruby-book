@@ -1,10 +1,3 @@
-def convert_hash_format(text)
-  expectText = <<~TEXT
-  {
-    name: 'Alice',
-    age: 20,
-    gendar: :female
-  }
-  TEXT
-  expectText
+def convert_hash_format(old_syntax)
+  old_syntax.gsub(/:(\w+) *=>*/,'\1:')
 end
