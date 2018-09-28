@@ -36,3 +36,17 @@ p '123-4567'.gsub(/(\d+)/, '\1|')
 gsubHash = {'/' => '///', '-'=> '---' }
 p '123/45-67'.gsub(/\/|-/, gsubHash)
 
+# other way for using regexp
+
+p %r!http://example.com! # / doesn't need to add escape
+
+reg = 'reg'
+
+p /#{reg}\d/
+
+text = '誕生日は1987年12月22日です'
+text =~ /(\d+)年(\d+)月(\d+)日/
+
+p $~
+p $&
+p [$1, $2, $3]
