@@ -6,7 +6,7 @@ class ClassName
   attr_accessor :name_rw
   CLASS_CONST_VALUE = 0
 
-  def initialize(name='name')
+  def initialize(name = 'name')
     puts 'init'
     @name_r = name
     @name_w = name
@@ -29,6 +29,18 @@ class ClassName
     p 'class_method called!'
     p CLASS_CONST_VALUE
   end
+
+  def self.self_log
+    p self
+    p self.class_method
+  end
+
+  def self_log
+    p self
+    # p self.class_method # error can't call class method
+  end
+
+  p 'can exec code here'
 end
 
 c = ClassName.new
@@ -44,3 +56,40 @@ c.hello_rw
 
 ClassName.class_method
 # ClassName.hello_w # error
+
+ClassName.self_log # Class
+c.self_log # Instance
+
+class Product # super
+  attr_reader :name, :price
+
+  def initialize(name, price)
+    @name = name
+    @price = price
+  end
+
+  def say_info
+    p @name
+    p @price
+  end
+end
+
+class Dvd < Product #sub
+  attr_reader :movie_time
+
+  def initialize(name, price, movie_time)
+    super(name, price)
+    @movie_time = movie_time
+  end
+
+  def say_info # override
+    super
+    p @movie_time
+  end
+end
+
+ppp = Product.new('super computer', '$1000')
+ddd = Dvd.new('super computer', '$1000', '60m')
+
+ppp.say_info
+ddd.say_info
