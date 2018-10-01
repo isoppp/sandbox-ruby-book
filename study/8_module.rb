@@ -50,3 +50,9 @@ end
 
 ExtendSample::example
 ExtendSample.example
+
+p Product.include?(Loggable)
+p Product.included_modules # include modules
+p Product.ancestors # include super class
+
+p user.is_a?(User)
