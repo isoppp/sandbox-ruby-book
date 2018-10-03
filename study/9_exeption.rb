@@ -44,3 +44,19 @@ rescue
     puts 'failed retry X<'
   end
 end
+
+def corrency_of(country)
+  case country
+  when :japan
+    'yen'
+  when :us
+    'dollar'
+  when :india
+    'ruppe'
+  else
+    raise "invalid country: #{country}"
+  end
+end
+
+corrency_of(:japan)
+corrency_of(:jaapan)
