@@ -54,7 +54,7 @@ def corrency_of(country)
   when :india
     'ruppe'
   else
-    raise "invalid country: #{country}"
+    raise ArgumentError, "invalid country: #{country}"
   end
 end
 
