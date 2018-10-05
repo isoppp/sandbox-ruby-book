@@ -12,6 +12,9 @@ regexp = Regexp.new(pattern)
 rescue RegexpError => e
   puts "Invalid pattern: #{e.message}"
   retry
+
+ensure
+  puts "ensure"
 end
 
 matches = text.scan(regexp)
