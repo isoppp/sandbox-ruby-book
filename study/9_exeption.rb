@@ -45,7 +45,7 @@ rescue
   end
 end
 
-def corrency_of(country)
+def currency_of(country)
   case country
   when :japan
     'yen'
@@ -58,5 +58,25 @@ def corrency_of(country)
   end
 end
 
-corrency_of(:japan)
-corrency_of(:jaapan)
+currency_of(:japan)
+# currency_of(:jaapan) # ArgumentError
+
+require 'date'
+
+def to_date(string)
+  begin
+    # try to parse string
+    Date.parse(string)
+  rescue ArgumentError
+    nil # return
+  end
+end
+
+p to_date('2017-01-01')
+p to_date('abcdef') #=> nil
+
+def to_date_short(string) # same
+  Date.parse(string) rescue nil
+end
+
+p to_date_short('abcdef') #=> nil
